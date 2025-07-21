@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiliate Registration</title>
+  <!-- External CSS and JS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="/project/assets/css/styles.css" rel="stylesheet">
+  <link href="/project/assets/css/choices.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-blue-50">
+  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-lg">
+      <img src="/project/assets/images/logo.png" alt="RedCloud Logo" class="mx-auto h-12 w-auto" />
+    </div>
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg">
+      <div class="bg-white border border-[#bfdbfe] rounded-lg shadow p-8 mt-4">
+        <h2 class="text-center text-2xl font-bold tracking-tight text-blue-900">Affiliate Registration</h2>
+        <p class="mt-2 text-center text-blue-600">Join the RedCloud affiliate network and start earning commissions</p>
+        <form class="space-y-6 mt-8">
+          <div>
+            <label for="fullName" class="block text-sm font-medium text-gray-900 mb-1">Full Name <span
+                class="text-red-500">*</span></label>
+            <input id="fullName" name="fullName" placeholder="Enter your full name" required
+              class="block w-full rounded-md border border-[#bfdbfe] px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-900 mb-1">Email Address <span
+                class="text-red-500">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required
+              class="block w-full rounded-md border border-[#bfdbfe] px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]" />
+          </div>
+          <div>
+            <label for="mobileNumber" class="block text-sm font-medium text-gray-900 mb-1">Mobile Number <span
+                class="text-red-500">*</span></label>
+            <div class="flex flex-col sm:flex-row gap-2">
+              <div class="flex flex-row gap-2">
+                <div class="relative w-[150px]">
+                  <button type="button" id="countryDropdownBtn"
+                    class="h-[42px] w-full flex justify-between items-center border border-[#bfdbfe] rounded-md px-4 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                    <span id="countryDropdownSelected" class="text-[0.85rem] whitespace-nowrap">+234 (NG)</span>
+                    <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <ul id="countryDropdownList"
+                    class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto hidden">
+                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+234 (NG)">+234 (NG)</li>
+                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+91 (IN)">+91 (IN)</li>
+                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+1 (US)">+1 (US)</li>
+                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+44 (UK)">+44 (UK)</li>
+                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+971 (UAE)">+971 (UAE)</li>
+                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+27 (ZA)">+27 (ZA)</li>
+                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+233 (GH)">+233 (GH)</li>
+                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+254 (KE)">+254 (KE)</li>
+                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+92 (PK)">+92 (PK)</li>
+                  </ul>
+                  <input type="hidden" id="countryCode" name="countryCode" value="+234 (NG)" required />
+                </div>
+                <input id="mobileNumber" name="mobileNumber" placeholder="800 123 4567" required
+                  class="block w-[180px] rounded-md border border-[#bfdbfe] px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]" />
+              </div>
+              <button type="button"
+                class="w-full sm:w-[110px] flex flex-col items-center justify-center px-4 py-2 border border-blue-600 rounded-md text-blue-600 hover:bg-blue-50 transition send-otp-btn text-[0.85rem] mt-2 sm:mt-0">Send
+                OTP</button>
+            </div>
+            <div id="otp-container" class="mt-2 hidden">
+              <input id="otp-input" name="otp" placeholder="Enter 4-digit OTP" maxlength="4" pattern="\d{4}"
+                inputmode="numeric" autocomplete="one-time-code"
+                class="block w-full rounded-md border border-[#bfdbfe] px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]" />
+              <div id="otp-success" class="hidden text-green-600 text-sm mt-2">OTP verified successfully!</div>
+              <div id="otp-error" class="hidden text-red-600 text-sm mt-2">Invalid OTP. Please try again.</div>
+              <div class="flex items-center gap-4 mt-2">
+                <span id="otp-timer" class="text-blue-600 text-sm hidden">Resend in 30s</span>
+                <a href="#" id="otp-resend" class="text-blue-600 underline text-sm hidden">Resend OTP</a>
+              </div>
+            </div>
+            <p class="text-left text-xs text-blue-600 mt-2">Note: The mobile number must be registered with WhatsApp</p>
+          </div>
+          <div>
+            <label for="ninOrBvn" class="block text-sm font-medium text-gray-900 mb-1">NIN or BVN <span
+                class="text-red-500">*</span></label>
+            <input id="ninOrBvn" name="ninOrBvn" placeholder="Enter your NIN or BVN" required
+              class="block w-full rounded-md border border-[#bfdbfe] px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]" />
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="bankName" class="block text-sm font-medium text-gray-900 mb-1">Bank Name <span
+                  class="text-red-500">*</span></label>
+              <div class="relative">
+                <button type="button" id="bankDropdownBtn"
+                  class="w-full flex justify-between items-center border border-[#bfdbfe] rounded-md px-4 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                  <span id="bankDropdownSelected">Select your bank</span>
+                  <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <ul id="bankDropdownList"
+                  class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto hidden">
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Access Bank">Access Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="First Bank of Nigeria">First Bank of
+                    Nigeria</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Guaranty Trust Bank">Guaranty Trust
+                    Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="United Bank for Africa">United Bank
+                    for Africa</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Zenith Bank">Zenith Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Fidelity Bank">Fidelity Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Union Bank of Nigeria">Union Bank of
+                    Nigeria</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Sterling Bank">Sterling Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Stanbic IBTC Bank">Stanbic IBTC Bank
+                  </li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Ecobank Nigeria">Ecobank Nigeria
+                  </li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="FCMB">FCMB</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Heritage Bank">Heritage Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Keystone Bank">Keystone Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Polaris Bank">Polaris Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Providus Bank">Providus Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Unity Bank">Unity Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Wema Bank">Wema Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Citibank Nigeria">Citibank Nigeria
+                  </li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="SunTrust Bank">SunTrust Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Jaiz Bank">Jaiz Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Globus Bank">Globus Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Parallex Bank">Parallex Bank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Titan Trust Bank">Titan Trust Bank
+                  </li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="TAJBank">TAJBank</li>
+                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="PremiumTrust Bank">PremiumTrust Bank
+                  </li>
+                </ul>
+                <input type="hidden" id="bankName" name="bankName" required />
+              </div>
+            </div>
+            <div>
+              <label for="accountNumber" class="block text-sm font-medium text-gray-900 mb-1">Account Number <span
+                  class="text-red-500">*</span></label>
+              <input id="accountNumber" name="accountNumber" placeholder="Enter account number" required
+                class="block w-full rounded-md border border-[#bfdbfe] px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-900 mb-1">Upload Selfie <span
+                class="text-red-500">*</span></label>
+            <label for="selfie-upload"
+              class="flex flex-col items-center justify-center border-2 border-dashed border-blue-300 rounded-lg cursor-pointer p-8 text-center transition hover:border-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400 mb-2" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5-5m0 0l5 5m-5-5v12" />
+              </svg>
+              <span class="text-blue-600 font-semibold">Click to upload your selfie</span>
+              <span class="text-xs text-blue-400 mt-1">PNG, JPG up to 5MB</span>
+              <input id="selfie-upload" name="selfie-upload" type="file" accept="image/png,image/jpeg" class="hidden" />
+            </label>
+          </div>
+          <div class="bg-blue-50 border border-blue-200 rounded-md p-3 text-blue-700 text-sm mb-2">
+            reCAPTCHA verification (placeholder)
+          </div>
+          <div class="flex items-center gap-2 mt-4">
+            <input type="checkbox" id="terms" required
+              class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+            <label for="terms" class="text-sm">
+              I accept the <a class="text-blue-600 underline" href="#">Terms &amp; Conditions</a> and <a
+                class="text-blue-600 underline" href="#">Privacy Policy</a>
+            </label>
+          </div>
+          <button id="registerBtn" type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition text-[0.85rem] opacity-50 cursor-not-allowed"
+            disabled>Register Now</button>
+          <div class="text-center mt-4 text-sm">
+            Already have an account?
+            <a class="text-blue-600 underline" href="Login.html">Sign In</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- External JavaScript -->
+  <script src="/project/assets/js/script.js"></script>
+  <script src="/project/assets/js/choices.min.js"></script>
+  <script>
+    // OTP logic for registration (same as forgot password)
+    document.addEventListener('DOMContentLoaded', function () {
+      const sendOtpBtn = document.querySelector('.send-otp-btn');
+      const otpContainer = document.getElementById('otp-container');
+      const otpInput = document.getElementById('otp-input');
+      const otpSuccess = document.getElementById('otp-success');
+      const otpError = document.getElementById('otp-error');
+      const otpTimer = document.getElementById('otp-timer');
+      const otpResend = document.getElementById('otp-resend');
+      let otpMock = '1234';
+      let timerInterval = null;
+      let timerSeconds = 30;
+      function startOtpTimer() {
+        timerSeconds = 30;
+        otpTimer.style.display = 'inline';
+        otpResend.style.display = 'none';
+        otpTimer.textContent = `Resend in ${timerSeconds}s`;
+        timerInterval = setInterval(() => {
+          timerSeconds--;
+          otpTimer.textContent = `Resend in ${timerSeconds}s`;
+          if (timerSeconds <= 0) {
+            clearInterval(timerInterval);
+            otpTimer.style.display = 'none';
+            otpResend.style.display = 'inline';
+          }
+        }, 1000);
+      }
+      function resetOtpUI() {
+        otpInput.value = '';
+        otpInput.disabled = false;
+        otpSuccess.style.display = 'none';
+        otpError.style.display = 'none';
+        otpInput.style.borderColor = '';
+      }
+      if (sendOtpBtn && otpContainer && otpInput) {
+        sendOtpBtn.addEventListener('click', function () {
+          otpContainer.style.display = 'block';
+          resetOtpUI();
+          otpInput.focus();
+          startOtpTimer();
+        });
+      }
+      if (otpInput) {
+        otpInput.addEventListener('input', function () {
+          otpSuccess.style.display = 'none';
+          otpError.style.display = 'none';
+          otpInput.style.borderColor = '';
+          if (otpInput.value.length === 4) {
+            otpInput.disabled = true;
+            setTimeout(() => {
+              if (otpInput.value === otpMock) {
+                otpSuccess.style.display = 'block';
+                otpError.style.display = 'none';
+                otpInput.style.borderColor = '#16a34a';
+              } else {
+                otpSuccess.style.display = 'none';
+                otpError.style.display = 'block';
+                otpInput.style.borderColor = '#dc2626';
+                otpInput.disabled = false;
+                otpInput.focus();
+              }
+            }, 400);
+          }
+        });
+      }
+      if (otpResend) {
+        otpResend.addEventListener('click', function (e) {
+          e.preventDefault();
+          resetOtpUI();
+          startOtpTimer();
+          otpInput.focus();
+        });
+      }
+    });
+    // Custom dropdown for bank selection
+    (function () {
+      const btn = document.getElementById('bankDropdownBtn');
+      const list = document.getElementById('bankDropdownList');
+      const selected = document.getElementById('bankDropdownSelected');
+      const hiddenInput = document.getElementById('bankName');
+      if (btn && list && selected && hiddenInput) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          list.classList.toggle('hidden');
+        });
+        list.querySelectorAll('li').forEach(function (item) {
+          item.addEventListener('click', function () {
+            selected.textContent = item.textContent;
+            hiddenInput.value = item.getAttribute('data-value');
+            list.classList.add('hidden');
+          });
+        });
+        document.addEventListener('click', function (e) {
+          if (!btn.contains(e.target) && !list.contains(e.target)) {
+            list.classList.add('hidden');
+          }
+        });
+      }
+    })();
+    // Custom dropdown for country code selection
+    (function () {
+      const btn = document.getElementById('countryDropdownBtn');
+      const list = document.getElementById('countryDropdownList');
+      const selected = document.getElementById('countryDropdownSelected');
+      const hiddenInput = document.getElementById('countryCode');
+      if (btn && list && selected && hiddenInput) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          list.classList.toggle('hidden');
+        });
+        list.querySelectorAll('li').forEach(function (item) {
+          item.addEventListener('click', function () {
+            selected.textContent = item.textContent;
+            hiddenInput.value = item.getAttribute('data-value');
+            list.classList.add('hidden');
+          });
+        });
+        document.addEventListener('click', function (e) {
+          if (!btn.contains(e.target) && !list.contains(e.target)) {
+            list.classList.add('hidden');
+          }
+        });
+      }
+    })();
+    // Registration form validation for enabling Register Now button
+    const form = document.querySelector('form');
+    const registerBtn = document.getElementById('registerBtn');
+    const requiredFields = form.querySelectorAll('input[required], select[required], textarea[required]');
+    function checkFormValidity() {
+      let allFilled = true;
+      requiredFields.forEach(field => {
+        if (field.type === 'checkbox' && !field.checked) allFilled = false;
+        else if (field.type !== 'checkbox' && !field.value) allFilled = false;
+      });
+      if (allFilled) {
+        registerBtn.disabled = false;
+        registerBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      } else {
+        registerBtn.disabled = true;
+        registerBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      }
+    }
+    requiredFields.forEach(field => {
+      field.addEventListener('input', checkFormValidity);
+      field.addEventListener('change', checkFormValidity);
+    });
+    checkFormValidity();
+  </script>
+</body>
+
+</html>

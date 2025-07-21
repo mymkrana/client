@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Registration</title>
+    <!-- External CSS and JS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body class="registration-container registration-page">
+    <div style="width: 100%; max-width: 500px; margin: 0 auto;">
+        <a href="Login.html" class="back-link" style="margin: 1.5rem 0 0 0;">
+            ← Back to Login
+        </a>
+    </div>
+    <div class="logo-container">
+        <img src="/project/assets/images/logo.png" alt="RedCloud Logo" class="logo-img">
+    </div>
+    <div class="registration-card">
+        <div class="registration-header">
+            <h3 class="registration-title">Affiliate Registration</h3>
+            <p class="registration-subtitle">Join the RedCloud affiliate network and start earning commissions</p>
+        </div>
+        <div class="registration-form-body">
+            <form class="registration-form">
+                <div class="form-group">
+                    <label class="form-label" for="fullName">Full Name *</label>
+                    <input class="form-input" id="fullName" name="fullName" placeholder="Enter your full name" required value="">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" class="form-input" id="email" name="email" placeholder="Enter your email address" required value="">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="mobileNumber">Mobile Number *</label>
+                    <div class="form-row">
+                        <select id="countryCode" name="countryCode" class="form-select country-code-select" required>
+                            <option value="+234" selected>+234 (NG)</option>
+                            <option value="+91">+91 (IN)</option>
+                            <option value="+1">+1 (US)</option>
+                            <option value="+44">+44 (UK)</option>
+                            <option value="+971">+971 (UAE)</option>
+                            <option value="+27">+27 (ZA)</option>
+                            <option value="+233">+233 (GH)</option>
+                            <option value="+254">+254 (KE)</option>
+                            <option value="+92">+92 (PK)</option>
+                        </select>
+                        <input class="form-input flex-1" id="mobileNumber" name="mobileNumber" placeholder="800 123 4567" required value="">
+                        <button class="btn btn-secondary send-otp-btn" type="button">Send OTP</button>
+                    </div>
+                    <div id="otp-container" style="display:none; margin-top:0.75rem;">
+                        <input class="form-input" id="otp-input" name="otp" placeholder="Enter 4-digit OTP" maxlength="4" pattern="\\d{4}" inputmode="numeric" autocomplete="one-time-code">
+                        <div id="otp-success" style="display:none; color:#16a34a; font-size:0.95rem; margin-top:0.5rem;">
+                            OTP verified successfully!
+                        </div>
+                        <div id="otp-error" style="display:none; color:#dc2626; font-size:0.95rem; margin-top:0.5rem;">
+                            Invalid OTP. Please try again.
+                        </div>
+                        <div style="display:flex; align-items:center; gap:1rem; margin-top:0.5rem;">
+                            <span id="otp-timer" style="color:#2563eb; font-size:0.95rem; display:none;">Resend in 30s</span>
+                            <a href="#" id="otp-resend" style="color:#2563eb; font-size:0.95rem; text-decoration:underline; display:none;">Resend OTP</a>
+                        </div>
+                    </div>
+                    <p class="form-note">Note: The mobile number must be registered with WhatsApp</p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="ninOrBvn">NIN or BVN *</label>
+                    <input class="form-input" id="ninOrBvn" name="ninOrBvn" placeholder="Enter your NIN or BVN" required value="">
+                </div>
+                <div class="form-row form-row-2col">
+                    <div class="form-group">
+                        <label class="form-label" for="bankName">Bank Name *</label>
+                        <select id="bankName" name="bankName" required class="form-select">
+                            <option value="" selected disabled>Select your bank</option>
+                            <option value="Access Bank">Access Bank</option>
+                            <option value="First Bank of Nigeria">First Bank of Nigeria</option>
+                            <option value="Guaranty Trust Bank">Guaranty Trust Bank</option>
+                            <option value="United Bank for Africa">United Bank for Africa</option>
+                            <option value="Zenith Bank">Zenith Bank</option>
+                            <option value="Fidelity Bank">Fidelity Bank</option>
+                            <option value="Union Bank of Nigeria">Union Bank of Nigeria</option>
+                            <option value="Sterling Bank">Sterling Bank</option>
+                            <option value="Stanbic IBTC Bank">Stanbic IBTC Bank</option>
+                            <option value="Ecobank Nigeria">Ecobank Nigeria</option>
+                            <option value="FCMB">FCMB</option>
+                            <option value="Heritage Bank">Heritage Bank</option>
+                            <option value="Keystone Bank">Keystone Bank</option>
+                            <option value="Polaris Bank">Polaris Bank</option>
+                            <option value="Providus Bank">Providus Bank</option>
+                            <option value="Unity Bank">Unity Bank</option>
+                            <option value="Wema Bank">Wema Bank</option>
+                            <option value="Citibank Nigeria">Citibank Nigeria</option>
+                            <option value="SunTrust Bank">SunTrust Bank</option>
+                            <option value="Jaiz Bank">Jaiz Bank</option>
+                            <option value="Globus Bank">Globus Bank</option>
+                            <option value="Parallex Bank">Parallex Bank</option>
+                            <option value="Titan Trust Bank">Titan Trust Bank</option>
+                            <option value="TAJBank">TAJBank</option>
+                            <option value="PremiumTrust Bank">PremiumTrust Bank</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="accountNumber">Account Number</label>
+                        <input class="form-input" id="accountNumber" name="accountNumber" placeholder="Enter account number" required value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Upload Selfie *</label>
+                    <div class="file-upload">
+                        <input type="file" accept="image/png,image/jpeg" class="file-input" id="selfie-upload">
+                        <label for="selfie-upload" class="file-upload-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="file-upload-icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" x2="12" y1="3" y2="15"></line>
+                            </svg>
+                            <p class="file-upload-text">Click to upload your selfie</p>
+                            <p class="file-upload-note">PNG, JPG up to 5MB</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="recaptcha-box">
+                    <p class="recaptcha-text">reCAPTCHA verification (placeholder)</p>
+                </div>
+                <div class="form-checkbox-row" style="margin-top: 1.5rem;">
+                    <input type="checkbox" id="terms" class="form-checkbox">
+                    <label for="terms">
+                        I accept the <a class="form-link" href="#">Terms &amp; Conditions</a> and <a class="form-link" href="#">Privacy Policy</a>
+                    </label>
+                </div>
+                <button class="btn btn-primary w-full" type="submit" disabled>Register Now</button>
+                <div class="form-footer">
+                    <p class="form-footer-text">Already have an account? <a class="form-link" href="Login.html">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- External JavaScript -->
+    <script src="/project/assets/js/script.js"></script>
+    <script>
+    // OTP logic for registration (same as forgot password)
+    document.addEventListener('DOMContentLoaded', function() {
+        const sendOtpBtn = document.querySelector('.send-otp-btn');
+        const otpContainer = document.getElementById('otp-container');
+        const otpInput = document.getElementById('otp-input');
+        const otpSuccess = document.getElementById('otp-success');
+        const otpError = document.getElementById('otp-error');
+        const otpTimer = document.getElementById('otp-timer');
+        const otpResend = document.getElementById('otp-resend');
+        let otpMock = '1234';
+        let timerInterval = null;
+        let timerSeconds = 30;
+        function startOtpTimer() {
+            timerSeconds = 30;
+            otpTimer.style.display = 'inline';
+            otpResend.style.display = 'none';
+            otpTimer.textContent = `Resend in ${timerSeconds}s`;
+            timerInterval = setInterval(() => {
+                timerSeconds--;
+                otpTimer.textContent = `Resend in ${timerSeconds}s`;
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    otpTimer.style.display = 'none';
+                    otpResend.style.display = 'inline';
+                }
+            }, 1000);
+        }
+        function resetOtpUI() {
+            otpInput.value = '';
+            otpInput.disabled = false;
+            otpSuccess.style.display = 'none';
+            otpError.style.display = 'none';
+            otpInput.style.borderColor = '';
+        }
+        if (sendOtpBtn && otpContainer && otpInput) {
+            sendOtpBtn.addEventListener('click', function() {
+                otpContainer.style.display = 'block';
+                resetOtpUI();
+                otpInput.focus();
+                startOtpTimer();
+            });
+        }
+        if (otpInput) {
+            otpInput.addEventListener('input', function() {
+                otpSuccess.style.display = 'none';
+                otpError.style.display = 'none';
+                otpInput.style.borderColor = '';
+                if (otpInput.value.length === 4) {
+                    otpInput.disabled = true;
+                    setTimeout(() => {
+                        if (otpInput.value === otpMock) {
+                            otpSuccess.style.display = 'block';
+                            otpError.style.display = 'none';
+                            otpInput.style.borderColor = '#16a34a';
+                        } else {
+                            otpSuccess.style.display = 'none';
+                            otpError.style.display = 'block';
+                            otpInput.style.borderColor = '#dc2626';
+                            otpInput.disabled = false;
+                            otpInput.focus();
+                        }
+                    }, 400);
+                }
+            });
+        }
+        if (otpResend) {
+            otpResend.addEventListener('click', function(e) {
+                e.preventDefault();
+                resetOtpUI();
+                startOtpTimer();
+                otpInput.focus();
+            });
+        }
+    });
+    </script>
+</body>
+
+</html>

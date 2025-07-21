@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- External CSS and JS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="/project/assets/css/styles.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-50">
+  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <img src="/project/assets/images/logo.png" alt="RedCloud Logo" class="mx-auto h-12 w-auto" />
+
+    </div>
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div class="bg-white border border-[#bfdbfe] rounded-lg shadow p-8 mt-4">
+        <h2 class="text-center text-2xl font-bold tracking-tight text-blue-900">Sign In</h2>
+        <p class="mt-2 text-center text-blue-600">Access your affiliate management account</p>
+        <!-- If you have a subheading, include it here as a <p> -->
+        <form action="#" method="POST" class="space-y-6 mt-8">
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-900 mb-1">Email Address</label>
+            <div class="mt-2">
+              <input id="email" type="email" name="email" required autocomplete="email"
+                class="block w-full rounded-md border border-[#bfdbfe] px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]"
+                placeholder="Enter your email address" />
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between">
+              <label for="password" class="block text-sm font-medium text-gray-900 mb-1">Password</label>
+              <div class="text-sm">
+                <a href="ForgotPassword.html" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot
+                  password?</a>
+              </div>
+            </div>
+            <div class="mt-2">
+              <input id="password" type="password" name="password" required autocomplete="current-password"
+                class="block w-full rounded-md border border-[#bfdbfe] px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]"
+                placeholder="Enter your password" />
+            </div>
+          </div>
+          <div>
+            <button type="submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition text-[0.85rem]">Sign
+              in</button>
+          </div>
+        </form>
+        <p class="mt-10 text-center text-sm/6 text-gray-500">
+          Don't have an account?
+          <a href="AffiliateRegistration.html" class="text-blue-600 underline">Register as an Affiliate</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- External JavaScript -->
+  <script src="/project/assets/js/script.js"></script>
+</body>
+
+</html>

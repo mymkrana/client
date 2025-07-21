@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Create Users</title>
+
+    <!-- External CSS and JS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+    <link href="/project/assets/css/choices.min.css" rel="stylesheet">
+    <link href="/project/assets/css/sidebar.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="sidebar-container"></div>
+        <div class="sidebar-overlay"></div>
+        <div class="main-content">
+            <div id="topbar-container"></div>
+            <!-- page content starts here -->
+            <main class="page-content">
+                <div class="mx-auto">
+                    <div class="page-header" style="align-items: center; margin-bottom: 1.5rem;">
+                        <a href="allusers.html" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m12 19-7-7 7-7" />
+                                <path d="M19 12H5" />
+                            </svg>
+                            Back to Users
+                        </a>
+                    </div>
+
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Create New User</h1>
+                            <p class="page-subtitle">Add a new affiliate or back office user to the system.</p>
+                        </div>
+                    </div>
+
+                    <!-- User Registration Form Card -->
+                    <div class="card mt-6">
+                        <div class="card-header">
+                            <h3 class="card-title">User Registration Form</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="mt-0">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block font-medium text-gray-900 mb-1 text-[0.85rem]">Full
+                                            Name</label>
+                                        <input type="text" placeholder="Enter full name"
+                                            class="w-full border border-gray-300 rounded-md px-4 py-2 text-gray-900 placeholder:text-[0.95rem] focus:border-gray-900 focus-visible:border-gray-900 text-[0.85rem]" />
+                                    </div>
+                                    <div>
+                                        <label class="block font-medium text-gray-900 mb-1 text-[0.85rem]">Email
+                                            Address</label>
+                                        <input type="email" placeholder="Enter email address"
+                                            class="w-full border border-gray-300 rounded-md px-4 py-2 text-gray-900 placeholder:text-[0.95rem] focus:border-gray-900 focus-visible:border-gray-900 text-[0.85rem]" />
+                                    </div>
+                                    <div>
+                                        <label class="block font-medium text-gray-900 mb-1 text-[0.85rem]">Phone
+                                            Number</label>
+                                        <input type="text" placeholder="Enter phone number"
+                                            class="w-full border border-gray-300 rounded-md px-4 py-2 text-gray-900 placeholder:text-[0.95rem] focus:border-gray-900 focus-visible:border-gray-900 text-[0.85rem]" />
+                                    </div>
+                                    <div>
+                                        <label class="block font-medium text-gray-900 mb-1 text-[0.85rem]">User
+                                            Role</label>
+                                        <div class="relative">
+                                            <button type="button" id="roleDropdownBtn"
+                                                class="h-[42px] w-full flex justify-between items-center border border-gray-300 rounded-md px-4 py-2 bg-white text-gray-900 font-semibold focus:outline-none focus:border-gray-900 focus-visible:border-gray-900 transition text-[0.85rem]">
+                                                <span id="roleDropdownSelected" class="text-[0.95rem]">Select
+                                                    role</span>
+                                                <svg class="ml-2 h-5 w-5 text-gray-400"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            </button>
+                                            <ul id="roleDropdownList"
+                                                class="absolute left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto hidden">
+                                                <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                                                    data-value="Admin">Admin</li>
+                                                <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                                                    data-value="Affiliate">Affiliate</li>
+                                                <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                                                    data-value="Manager">Manager</li>
+                                            </ul>
+                                            <input type="hidden" name="userRole" id="userRole" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end gap-3 mt-8">
+                                    <button type="button"
+                                        class="px-5 py-2 rounded-md border border-gray-300 text-gray-900 bg-white font-medium hover:bg-gray-100 text-[0.85rem]">Cancel</button>
+                                    <button type="submit"
+                                        class="px-5 py-2 rounded-md bg-gray-900 text-white font-semibold hover:bg-gray-800 text-[0.85rem]">Create
+                                        User</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            loadComponent('sidebar-container', '../assets/partials/sidebar.html');
+            loadComponent('topbar-container', '../assets/partials/topbar.html');
+        });
+    </script>
+    <script src="/project/assets/js/script.js"></script>
+    <script src="/project/assets/partials/sidebar.js"></script>
+    <script src="/project/assets/js/choices.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var selects = document.querySelectorAll('select');
+            selects.forEach(function (select) {
+                new Choices(select, {
+                    searchEnabled: false,
+                    itemSelectText: '',
+                    shouldSort: false,
+                    position: 'auto',
+                    classNames: {
+                        containerOuter: 'choices custom-choices',
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('roleDropdownBtn');
+            const list = document.getElementById('roleDropdownList');
+            const selected = document.getElementById('roleDropdownSelected');
+            const hiddenInput = document.getElementById('userRole');
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                list.classList.toggle('hidden');
+            });
+            list.querySelectorAll('li').forEach(item => {
+                item.addEventListener('click', function () {
+                    selected.textContent = this.getAttribute('data-value');
+                    hiddenInput.value = this.getAttribute('data-value');
+                    list.classList.add('hidden');
+                });
+            });
+            document.addEventListener('click', function () {
+                list.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>

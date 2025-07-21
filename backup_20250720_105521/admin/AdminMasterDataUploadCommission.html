@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Master Data Upload Commission</title>
+    <!-- External CSS and JS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div id="sidebar-container"></div>
+        <div class="sidebar-overlay"></div>
+        <div class="main-content">
+            <div id="topbar-container"></div>
+            <main class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Upload Commission Details</h1>
+                        <p class="page-subtitle">Upload commission details using CSV or Excel files.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Upload File Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-upload h-5 w-5 mr-2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" x2="12" y1="3" y2="15"></line>
+                                </svg>
+                                Upload File
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="commission-file" class="form-label">Select Commission File</label>
+                                    <input type="file" id="commission-file" accept=".csv,.xlsx,.xls" class="form-input" />
+                                    <p class="mt-1 text-sm text-gray-500">Supported formats: CSV, Excel (.xlsx, .xls)</p>
+                                </div>
+                                <button id="upload-btn" class="btn btn-primary w-full" disabled>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-upload h-4 w-4 mr-2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17 8 12 3 7 8"></polyline>
+                                        <line x1="12" x2="12" y1="3" y2="15"></line>
+                                    </svg>
+                                    Upload Commission Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Download Template Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-download h-5 w-5 mr-2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" x2="12" y1="15" y2="3"></line>
+                                </svg>
+                                Download Template
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="space-y-4">
+                                <p class="text-gray-600">Download the commission details template to ensure your data is
+                                    formatted correctly before uploading.</p>
+                                <div class="space-y-2">
+                                    <h4 class="font-medium text-gray-800">Template includes:</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                                        <li>Affiliate ID</li>
+                                        <li>Commission Rate (%)</li>
+                                        <li>Product Category</li>
+                                        <li>Minimum Order Value</li>
+                                        <li>Effective Date</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-secondary w-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-download h-4 w-4 mr-2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" x2="12" y1="15" y2="3"></line>
+                                    </svg>
+                                    Download CSV Template
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- External JavaScript -->
+    <script src="/project/assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadComponent('sidebar-container', '../assets/partials/sidebar.html');
+            loadComponent('topbar-container', '../assets/partials/topbar.html');
+            
+            // File upload functionality
+            const fileInput = document.getElementById('commission-file');
+            const uploadBtn = document.getElementById('upload-btn');
+            
+            if (fileInput && uploadBtn) {
+                fileInput.addEventListener('change', function() {
+                    if (this.files.length > 0) {
+                        uploadBtn.disabled = false;
+                        uploadBtn.classList.remove('btn-secondary');
+                        uploadBtn.classList.add('btn-primary');
+                    } else {
+                        uploadBtn.disabled = true;
+                        uploadBtn.classList.remove('btn-primary');
+                        uploadBtn.classList.add('btn-secondary');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

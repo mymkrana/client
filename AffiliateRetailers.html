@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Retailers</title>
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/project/assets/css/choices.min.css" rel="stylesheet">
+    <link href="/project/assets/css/sidebar.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="sidebar-container"></div>
+        <div class="sidebar-overlay"></div>
+        <div class="main-content">
+        <div id="topbar-container"></div>
+            <!-- Page Content -->
+            <main class="flex-1 p-6 overflow-auto">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900 mb-2">My Retailers</h1>
+                        <p class="text-gray-600">Manage your registered retailers and track their performance.</p>
+                    </div>
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium
+                        ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2
+                        focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
+                        bg-blue-600 text-white hover:bg-blue-700 h-10 px-4 py-2 mt-4 sm:mt-0 btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-plus h-4 w-4 mr-2">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5v14"></path>
+                        </svg>
+                        Add New Retailer
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md border border-gray-200">
+                    <div class="flex flex-col space-y-1.5 p-6">
+                        <h3 class="text-2xl font-semibold leading-none tracking-tight">Retailer Network</h3>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="overflow-x-auto rounded-md border border-gray-200">
+                            <table class="w-full border-collapse">
+                                <thead>
+                                    <tr class="border-b">
+                                        <th class="text-left p-4 font-medium text-gray-700">Retailer ID</th>
+                                        <th class="text-left p-4 font-medium text-gray-700">FAO</th>
+                                        <th class="text-left p-4 font-medium text-gray-700">Cluster Manager</th>
+                                        <th class="text-left p-4 font-medium text-gray-700">Business Name</th>
+                                        <th class="text-left p-4 font-medium text-gray-700">Contact Person</th>
+                                        <th class="text-left p-4 font-medium text-gray-700">Location</th>
+                                        <th class="text-left p-4 font-medium text-gray-700">Registration Date</th>
+                                        <th class="text-left p-4 font-medium text-gray-700">Total Orders</th>
+                                        <th class="text-left p-4 font-medium text-gray-700">Total Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-4 font-medium text-gray-900">RET-001</td>
+                                        <td class="p-4 font-medium text-blue-600">FAO1234</td>
+                                        <td class="p-4 text-sm text-gray-700">cluster.manager1@redcloud.com</td>
+                                        <td class="p-4 text-gray-900">ABC Electronics Store</td>
+                                        <td class="p-4 text-gray-900">John Okoro</td>
+                                        <td class="p-4 text-gray-700">Lagos, Nigeria</td>
+                                        <td class="p-4 text-gray-700">2024-01-15</td>
+                                        <td class="p-4">
+                                            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold
+                                                bg-gray-200 text-gray-800">
+                                                12
+                                            </div>
+                                        </td>
+                                        <td class="p-4 font-medium text-green-600">₦3,200,000</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-4 font-medium text-gray-900">RET-002</td>
+                                        <td class="p-4 font-medium text-blue-600">FAO5678</td>
+                                        <td class="p-4 text-sm text-gray-700">cluster.manager2@redcloud.com</td>
+                                        <td class="p-4 text-gray-900">Tech Solutions Ltd</td>
+                                        <td class="p-4 text-gray-900">Mary Adebayo</td>
+                                        <td class="p-4 text-gray-700">Abuja, Nigeria</td>
+                                        <td class="p-4 text-gray-700">2024-01-10</td>
+                                        <td class="p-4">
+                                            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold
+                                                bg-gray-200 text-gray-800">
+                                                8
+                                            </div>
+                                        </td>
+                                        <td class="p-4 font-medium text-green-600">₦2,100,000</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-4 font-medium text-gray-900">RET-003</td>
+                                        <td class="p-4 font-medium text-blue-600">FAO9012</td>
+                                        <td class="p-4 text-sm text-gray-700">cluster.manager3@redcloud.com</td>
+                                        <td class="p-4 text-gray-900">Digital Hub Enterprise</td>
+                                        <td class="p-4 text-gray-900">Ibrahim Hassan</td>
+                                        <td class="p-4 text-gray-700">Kano, Nigeria</td>
+                                        <td class="p-4 text-gray-700">2024-01-08</td>
+                                        <td class="p-4">
+                                            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold
+                                                bg-gray-200 text-gray-800">
+                                                15
+                                            </div>
+                                        </td>
+                                        <td class="p-4 font-medium text-green-600">₦4,500,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- External JavaScript -->
+    <script src="/project/assets/js/script.js"></script>
+    <script src="/project/assets/partials/sidebar.js"></script>
+    <script src="/project/assets/js/sidebar.js"></script>
+    <script src="/project/assets/js/choices.min.js"></script>
+</body>
+
+</html>

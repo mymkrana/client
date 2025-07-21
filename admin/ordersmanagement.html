@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Orders Management</title>
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+    <link href="/project/assets/css/sidebar.css" rel="stylesheet">
+    <!-- Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="sidebar-container"></div>
+        <div class="sidebar-overlay"></div>
+        <div class="main-content">
+            <div id="topbar-container"></div>
+            <main class="page-content">
+                <div class="mb-8">
+                    <h1 class="text-2xl font-bold text-gray-900 mb-2">Order Management</h1>
+                    <p class="text-gray-600">Monitor and manage all orders across the platform.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Total Orders Card -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Total Orders</p>
+                                <p class="text-2xl font-bold text-blue-900">1,234</p>
+                                <p class="text-xs text-gray-500 mt-1">All time orders</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pending Orders Card -->
+                    <div class="bg-orange-50 border border-orange-200 rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Pending Orders</p>
+                                <p class="text-2xl font-bold text-orange-900">42</p>
+                                <p class="text-xs text-gray-500 mt-1">Awaiting processing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Completed Orders Card -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Completed Orders</p>
+                                <p class="text-2xl font-bold text-green-900">1,150</p>
+                                <p class="text-xs text-gray-500 mt-1">Successfully fulfilled</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Orders Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">All Orders</h3>
+                    </div>
+                    <div class="card-body" style="padding-top: 0;">
+                        <div class="table-container border border-gray-300 rounded-md">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Order Date</th>
+                                        <th>Customer Name</th>
+                                        <th>Product Name</th>
+                                        <th>Order Amount</th>
+                                        <th>Status</th>
+                                        <th>FAO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-medium">ORD-001</td>
+                                        <td>2024-01-15</td>
+                                        <td>Alice Johnson</td>
+                                        <td>Laptop Pro 15"</td>
+                                        <td>₦450,000</td>
+                                        <td>
+                                            <span class="status-badge status-active">Completed</span>
+                                        </td>
+                                        <td><a href="#" class="text-blue-600 hover:underline">FAO1234</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">ORD-002</td>
+                                        <td>2024-01-14</td>
+                                        <td>Bob Wilson</td>
+                                        <td>Smartphone X</td>
+                                        <td>₦280,000</td>
+                                        <td>
+                                            <span class="status-badge status-pending">Pending</span>
+                                        </td>
+                                        <td><a href="#" class="text-blue-600 hover:underline">FAO5678</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">ORD-003</td>
+                                        <td>2024-01-13</td>
+                                        <td>Carol Brown</td>
+                                        <td>Tablet Air</td>
+                                        <td>₦320,000</td>
+                                        <td>
+                                            <span class="status-badge status-inactive">Processing</span>
+                                        </td>
+                                        <td><a href="#" class="text-blue-600 hover:underline">FAO9012</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="/project/assets/js/script.js"></script>
+    <script src="/project/assets/partials/sidebar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            loadComponent('sidebar-container', '../assets/partials/sidebar.html');
+            loadComponent('topbar-container', '../assets/partials/topbar.html');
+        });
+    </script>
+</body>
+
+</html>

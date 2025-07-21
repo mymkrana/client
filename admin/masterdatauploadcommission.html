@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Master Data Upload Commission</title>
+    <!-- External CSS and JS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+    <link href="/project/assets/css/sidebar.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="sidebar-container"></div>
+        <div class="sidebar-overlay"></div>
+        <div class="main-content">
+            <div id="topbar-container"></div>
+            <main class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Upload Commission Details</h1>
+                        <p class="page-subtitle">Upload commission details using CSV or Excel files.</p>
+                    </div>
+                </div>
+
+                <div class="mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Upload File Card -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 flex flex-col">
+                        <h2 class="flex items-center text-lg font-bold mb-4"><svg class="h-5 w-5 mr-2 text-gray-900"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5-5m0 0l5 5m-5-5v12" />
+                            </svg> Upload File</h2>
+                        <label class="block font-medium text-gray-900 mb-1 text-[0.85rem]">Select Commission
+                            File</label>
+                        <input type="file"
+                            class="mb-2 w-full border border-gray-300 rounded-md px-4 py-2 text-[0.85rem]" />
+                        <div class="text-gray-500 text-[0.85rem] mb-4">Supported formats: CSV, Excel (.xlsx, .xls)</div>
+                        <button type="button"
+                            class="flex items-center justify-center gap-2 bg-gray-400 text-white text-[0.85rem] font-semibold rounded-md py-2 mt-auto"><svg
+                                class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5-5m0 0l5 5m-5-5v12" />
+                            </svg> Upload Commission Details</button>
+                    </div>
+                    <!-- Download Template Card -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 flex flex-col">
+                        <h2 class="flex items-center text-lg font-bold mb-4"><svg class="h-5 w-5 mr-2 text-gray-900"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5-5m0 0l5 5m-5-5v12" />
+                            </svg> Download Template</h2>
+                        <div class="text-gray-700 text-[0.85rem] mb-4">Download the commission details template to
+                            ensure your data is formatted correctly before uploading.<br /><br />
+                            <span class="font-semibold">Template includes:</span><br />
+                            <span class="block ml-2">• Affiliate ID<br />• Commission Rate (%)<br />• Product
+                                Category<br />• Minimum Order Value<br />• Effective Date</span>
+                        </div>
+                        <button type="button"
+                            class="flex items-center justify-center gap-2 border border-gray-300 text-gray-900 text-[0.85rem] font-medium rounded-md px-4 py-2 bg-white hover:bg-gray-100 mt-auto"><svg
+                                class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M12 5v14m7-7H5" />
+                            </svg> Download CSV Template</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- External JavaScript -->
+    <script src="/project/assets/js/script.js"></script>
+    <script src="/project/assets/partials/sidebar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            loadComponent('sidebar-container', '../assets/partials/sidebar.html');
+            loadComponent('topbar-container', '../assets/partials/topbar.html');
+
+            // File upload functionality
+            const fileInput = document.getElementById('commission-file');
+            const uploadBtn = document.getElementById('upload-btn');
+
+            if (fileInput && uploadBtn) {
+                fileInput.addEventListener('change', function () {
+                    if (this.files.length > 0) {
+                        uploadBtn.disabled = false;
+                        uploadBtn.classList.remove('btn-secondary');
+                        uploadBtn.classList.add('btn-primary');
+                    } else {
+                        uploadBtn.disabled = true;
+                        uploadBtn.classList.remove('btn-primary');
+                        uploadBtn.classList.add('btn-secondary');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

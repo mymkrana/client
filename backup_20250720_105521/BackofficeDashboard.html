@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    <!-- External CSS and JS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700<title>display=swap" rel="stylesheet">
+    <link href="/project/assets/css/styles.css" rel="stylesheet">Backoffice Dashboard</title>
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="sidebar-container"></div>
+        <div class="sidebar-overlay"></div>
+        <div class="main-content">
+            <!-- Header -->
+            <header class="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between shadow-sm">
+                <div class="flex items-center space-x-4">
+                    <div class="text-xl font-bold text-red-600">RedCloud</div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button
+                        class="flex items-center space-x-2 px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-user h-5 w-5 text-gray-600">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span class="text-sm font-medium text-gray-700">John Doe</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-1 p-6 overflow-auto">
+                <div class="mb-8">
+                    <div class="bg-blue-600 text-white p-6 rounded-lg">
+                        <h1 class="text-2xl font-bold mb-2">BackOffice Dashboard</h1>
+                        <p>Manage back-end office management and various admin tasks</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Card 1: Pending Applications -->
+                    <div class="cursor-pointer">
+                        <div class="rounded-lg border bg-blue-50 border-blue-200 shadow-sm">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-600">Pending Applications</p>
+                                        <p class="text-2xl font-bold text-blue-900">47</p>
+                                        <p class="text-xs text-gray-500 mt-1">43 affiliate applications</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Active Affiliates -->
+                    <div class="cursor-pointer">
+                        <div class="rounded-lg border bg-green-50 border-green-200 shadow-sm">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-600">Active Affiliates</p>
+                                        <p class="text-2xl font-bold text-green-900">156</p>
+                                        <p class="text-xs text-gray-500 mt-1">Currently active</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Total Applications -->
+                    <div class="cursor-pointer">
+                        <div class="rounded-lg border bg-purple-50 border-purple-200 shadow-sm">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-600">Total Applications</p>
+                                        <p class="text-2xl font-bold text-purple-900">203</p>
+                                        <p class="text-xs text-gray-500 mt-1">All time applications</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- System Overview Card -->
+                    <div class="rounded-lg border bg-white shadow-sm border-gray-200">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <h3 class="text-2xl font-semibold leading-none tracking-tight">System Overview</h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Total Users</span>
+                                    <span class="text-lg font-bold">1,247</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Active Sessions</span>
+                                    <span class="text-lg font-bold text-green-600">89</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">System Status</span>
+                                    <span
+                                        class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">Online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity Card -->
+                    <div class="rounded-lg border bg-white shadow-sm border-gray-200">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <h3 class="text-2xl font-semibold leading-none tracking-tight">Recent Activity</h3>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between py-2">
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">New Applications</div>
+                                        <div class="text-xs text-gray-500">12 new affiliate applications</div>
+                                    </div>
+                                    <span class="text-xs text-blue-600">Today</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2">
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">System Updates</div>
+                                        <div class="text-xs text-gray-500">Platform maintenance completed</div>
+                                    </div>
+                                    <span class="text-xs text-green-600">Yesterday</span>
+                                </div>
+                                <div class="flex items-center justify-between py-2">
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">User Activities</div>
+                                        <div class="text-xs text-gray-500">High user engagement recorded</div>
+                                    </div>
+                                    <span class="text-xs text-gray-600">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- External JavaScript -->
+    <script src="/project/assets/js/script.js"></script>
+</body>
+
+</html>

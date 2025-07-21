@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - All Users</title>
+    <!-- External CSS and JS -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+    <link href="/project/assets/css/sidebar.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="sidebar-container"></div>
+        <div class="sidebar-overlay"></div>
+        <div class="main-content">
+            <div id="topbar-container"></div>
+            <!-- page content starts here -->
+            <main class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Manage Users</h1>
+                        <p class="page-subtitle">Manage affiliate and back office users in the system.</p>
+                    </div>
+                    <a href="createusers.html" class="btn btn-primary page-header-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="M12 5v14" />
+                        </svg>
+                        Add New User
+                    </a>
+                </div>
+
+                <!-- Search & Filter Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Search & Filter</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="flex gap-4">
+                            <div class="relative w-1/2 min-w-0">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+                                    </svg>
+                                </span>
+                                <input type="text" placeholder="Search by email, phone number, or name..."
+                                    class="w-full pl-10 pr-4 py-2 rounded-md border border-gray-300 bg-white text-gray-900 placeholder:text-[0.85rem] focus:border-gray-900 focus-visible:border-gray-900" />
+                            </div>
+                            <div class="relative w-1/2 min-w-0">
+                                <button type="button" id="statusDropdownBtn"
+                                    class="h-[42px] w-full flex justify-between items-center border border-gray-300 rounded-md px-4 py-2 bg-white text-gray-900 font-semibold focus:outline-none focus:border-gray-900 focus-visible:border-gray-900">
+                                    <span id="statusDropdownSelected" class="text-[0.95rem]">All Statuses</span>
+                                    <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                <ul id="statusDropdownList"
+                                    class="absolute left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto hidden">
+                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="All Statuses">All
+                                        Statuses</li>
+                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Active">Active
+                                    </li>
+                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Inactive">Inactive
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Table Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Users</h3>
+                    </div>
+                    <div class="card-body" style="padding-top: 0;">
+                        <div class="table-container border border-gray-300 rounded-md">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Affiliate ID</th>
+                                        <th>Name</th>
+                                        <th>Email Address</th>
+                                        <th>Contact Number</th>
+                                        <th>Status</th>
+                                        <th>Registration Date</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-medium">AFF-001</td>
+                                        <td>John Doe</td>
+                                        <td>john.doe@example.com</td>
+                                        <td>+234-123-456-7890</td>
+                                        <td>
+                                            <span class="status-badge status-active">Active</span>
+                                        </td>
+                                        <td>2024-01-15</td>
+                                        <td class="text-right">
+                                            <div class="action-buttons">
+                                                <button class="action-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                                        <circle cx="12" cy="12" r="3" />
+                                                    </svg></button>
+                                                <button class="action-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+                                                    </svg></button>
+                                                <button class="action-btn"><svg class="delete-icon"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M3 6h18" />
+                                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                        <line x1="10" x2="10" y1="11" y2="17" />
+                                                        <line x1="14" x2="14" y1="11" y2="17" />
+                                                    </svg></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">AFF-002</td>
+                                        <td>Jane Smith</td>
+                                        <td>jane.smith@example.com</td>
+                                        <td>+234-987-654-3210</td>
+                                        <td>
+                                            <span class="status-badge status-pending">Pending</span>
+                                        </td>
+                                        <td>2024-01-20</td>
+                                        <td class="text-right">
+                                            <div class="action-buttons">
+                                                <button class="action-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                                        <circle cx="12" cy="12" r="3" />
+                                                    </svg></button>
+                                                <button class="action-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+                                                    </svg></button>
+                                                <button class="action-btn"><svg class="delete-icon"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M3 6h18" />
+                                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                        <line x1="10" x2="10" y1="11" y2="17" />
+                                                        <line x1="14" x2="14" y1="11" y2="17" />
+                                                    </svg></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">AFF-003</td>
+                                        <td>Mike Johnson</td>
+                                        <td>mike.johnson@example.com</td>
+                                        <td>+234-555-123-4567</td>
+                                        <td>
+                                            <span class="status-badge status-inactive">Inactive</span>
+                                        </td>
+                                        <td>2024-01-10</td>
+                                        <td class="text-right">
+                                            <div class="action-buttons">
+                                                <button class="action-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                                        <circle cx="12" cy="12" r="3" />
+                                                    </svg></button>
+                                                <button class="action-btn"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+                                                    </svg></button>
+                                                <button class="action-btn"><svg class="delete-icon"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M3 6h18" />
+                                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                                                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                                        <line x1="10" x2="10" y1="11" y2="17" />
+                                                        <line x1="14" x2="14" y1="11" y2="17" />
+                                                    </svg></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="/project/assets/js/script.js"></script>
+    <script src="/project/assets/partials/sidebar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('statusDropdownBtn');
+            const list = document.getElementById('statusDropdownList');
+            const selected = document.getElementById('statusDropdownSelected');
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                list.classList.toggle('hidden');
+            });
+            list.querySelectorAll('li').forEach(item => {
+                item.addEventListener('click', function () {
+                    selected.textContent = this.getAttribute('data-value');
+                    list.classList.add('hidden');
+                });
+            });
+            document.addEventListener('click', function () {
+                list.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>

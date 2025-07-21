@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Dashboard</title>
+    <!-- External CSS and JS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="sidebar-container"></div>
+        <div class="sidebar-overlay"></div>
+        <div class="main-content">
+            <div id="topbar-container"></div>
+
+            <!-- Page content -->
+            <main class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Affiliate Dashboard</h1>
+                        <p class="page-subtitle">Track your performance and manage your affiliate activities.</p>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg shadow-sm p-6">
+                        <div class="flex flex-col space-y-1.5">
+                            <h3 class="text-xl font-semibold flex items-center text-blue-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-circle-alert h-5 w-5 mr-2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" x2="12" y1="8" y2="12"></line>
+                                    <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                                </svg>
+                                Commission Requirements Notice
+                            </h3>
+                        </div>
+                        <div class="pt-0 mt-4">
+                            <div class="text-blue-700">
+                                <p class="font-medium mb-2">To earn commission, ensure the following requirements are met:
+                                </p>
+                                <ul class="list-disc list-inside space-y-1 text-sm">
+                                    <li>The Retailer must be registered with your Affiliate ID</li>
+                                    <li>The order must include your Affiliate voucher code</li>
+                                    <li>The order amount must be at least ₦150,000</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Qualified Orders Card -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Qualified Orders (MTD)</p>
+                                <p class="text-2xl font-bold text-green-900">12</p>
+                                <p class="text-xs text-gray-500 mt-1">Closed/completed orders this month</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projected Commission Card -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Projected Commission</p>
+                                <p class="text-2xl font-bold text-blue-900">₦245,000</p>
+                                <p class="text-xs text-gray-500 mt-1">All order statuses</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Qualified Commission Card -->
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Qualified Commission</p>
+                                <p class="text-2xl font-bold text-purple-900">₦180,000</p>
+                                <p class="text-xs text-gray-500 mt-1">Qualified orders only</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Commission Card -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-600">Monthly Commission</p>
+                                <p class="text-2xl font-bold text-green-900">₦156,750</p>
+                                <p class="text-xs text-gray-500 mt-1">This month's earnings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Total Orders Card -->
+                    <div class="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+                        <h3 class="text-xl font-semibold mb-4">Total Orders</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Complete/Closed Orders</span>
+                                <span class="text-lg font-bold text-green-600">24</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Pending/Processing Orders</span>
+                                <span class="text-lg font-bold text-yellow-600">8</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats Card -->
+                    <div class="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+                        <h3 class="text-xl font-semibold mb-4">Quick Stats</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Active Retailers</span>
+                                <span class="text-lg font-bold text-gray-900">15</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Average Order Value</span>
+                                <span class="text-lg font-bold text-gray-900">₦185,000</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-700">Conversion Rate</span>
+                                <span class="text-lg font-bold text-green-600">12.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- External JavaScript -->
+    <script src="/project/assets/js/script.js"></script>
+</body>
+
+</html>

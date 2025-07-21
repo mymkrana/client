@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Orders</title>
+    <!-- External CSS and JS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/project/assets/css/styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div id="sidebar-container"></div>
+        <div class="sidebar-overlay"></div>
+        <div class="main-content">
+            <div id="topbar-container"></div>
+
+            <!-- Page content -->
+            <main class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">My Orders</h1>
+                        <p class="page-subtitle">Track your order history and performance.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Order History</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Order Date</th>
+                                        <th>Order Value</th>
+                                        <th>FAO</th>
+                                        <th>Status</th>
+                                        <th>Days Since Order</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-medium">ORD-001</td>
+                                        <td>2024-01-15</td>
+                                        <td>₦275,000</td>
+                                        <td class="font-medium text-blue-600">FAO1234</td>
+                                        <td>
+                                            <span class="status-badge status-active">Completed</span>
+                                        </td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">ORD-002</td>
+                                        <td>2024-01-12</td>
+                                        <td>₦450,000</td>
+                                        <td class="font-medium text-blue-600">FAO5678</td>
+                                        <td>
+                                            <span class="status-badge status-pending">Processing</span>
+                                        </td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-medium">ORD-003</td>
+                                        <td>2024-01-10</td>
+                                        <td>₦320,000</td>
+                                        <td class="font-medium text-blue-600">FAO9012</td>
+                                        <td>
+                                            <span class="status-badge status-active">Completed</span>
+                                        </td>
+                                        <td class="text-red-600 font-semibold">12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- External JavaScript -->
+    <script src="/project/assets/js/script.js"></script>
+</body>
+</html>
