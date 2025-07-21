@@ -581,8 +581,8 @@ function initializeCommonFeatures() {
 
 // ===== INITIALIZE WHEN DOM IS LOADED =====
 document.addEventListener('DOMContentLoaded', function() {
-    loadComponent('sidebar-container', '/project/assets/partials/sidebar.html');
-    loadComponent('topbar-container', '/project/assets/partials/topbar.html');
+    loadComponent('sidebar-container', '/client/assets/partials/sidebar.html');
+    loadComponent('topbar-container', '/client/assets/partials/topbar.html');
     initializePage();
     
     // Add any additional initialization here

@@ -57,14 +57,14 @@ function loadComponent(id, url) {
 document.addEventListener('DOMContentLoaded', function() {
     // Determine which sidebar to load based on current page
     const currentPage = window.location.pathname.split('/').pop();
-    let sidebarPath = '/project/assets/partials/sidebar.html'; // Default admin sidebar
+    let sidebarPath = '/client/assets/partials/sidebar.html'; // Default admin sidebar
     if (currentPage && currentPage.startsWith('Affiliate')) {
-        sidebarPath = '/project/assets/partials/affiliate-sidebar.html';
+        sidebarPath = '/client/assets/partials/affiliate-sidebar.html';
     } else if (currentPage && currentPage.startsWith('Backoffice')) {
-        sidebarPath = '/project/assets/partials/backoffice-sidebar.html';
+        sidebarPath = '/client/assets/partials/backoffice-sidebar.html';
     }
     loadComponent('sidebar-container', sidebarPath);
-    loadComponent('topbar-container', '/project/assets/partials/topbar.html');
+    loadComponent('topbar-container', '/client/assets/partials/topbar.html');
 });
 
 // FINAL FALLBACK: Ensure hamburger event always attaches

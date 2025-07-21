@@ -23,14 +23,14 @@ function setupChoicesSelects() {
 
 document.addEventListener('DOMContentLoaded', function() {
   // Load sidebar
-  fetch('/project/assets/partials/backoffice-sidebar.html')
+  fetch('/client/assets/partials/backoffice-sidebar.html')
     .then(res => res.text())
     .then(html => {
       const sidebar = document.getElementById('sidebar-container');
       if (sidebar) sidebar.innerHTML = html;
     });
   // Load topbar
-  fetch('/project/assets/partials/topbar.html')
+  fetch('/client/assets/partials/topbar.html')
     .then(res => res.text())
     .then(html => {
       const topbar = document.getElementById('topbar-container');
