@@ -305,9 +305,14 @@
                         <input id="accountNumber" name="accountNumber" placeholder="Enter account number" required class="block w-full rounded-md border border-[#bfdbfe] px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]" />
                     </div>
                 </div>
+                <div class="flex flex-col gap-2 mt-4">
+                    <label for="remark" class="block text-sm font-medium text-gray-900 mb-1">Remark</label>
+                    <textarea id="remark" name="remark" rows="2" placeholder="Enter remark (optional)" class="block w-full rounded-md border border-[#bfdbfe] px-3 py-2 text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition placeholder:text-[0.85rem]"></textarea>
+                </div>
                 <div class="flex justify-end gap-3 mt-4">
                     <button type="button" id="modalCancelBtn" class="px-4 py-2 rounded border">Cancel</button>
-                    <button type="submit" id="modalSaveBtn" class="px-4 py-2 rounded bg-blue-600 text-white">Save</button>
+                    <button type="button" id="modalRejectBtn" class="px-4 py-2 rounded bg-red-600 text-white">Reject</button>
+                    <button type="button" id="modalApproveBtn" class="px-4 py-2 rounded bg-green-600 text-white">Approve</button>
                 </div>
             </form>
         </div>
@@ -374,6 +379,19 @@
             modalCancelBtn.addEventListener('click', closeModal);
             affiliateForm.addEventListener('submit', function (e) {
                 e.preventDefault();
+                closeModal();
+            });
+            // Approve/Reject button logic
+            const approveBtn = document.getElementById('modalApproveBtn');
+            const rejectBtn = document.getElementById('modalRejectBtn');
+            approveBtn.addEventListener('click', function () {
+                const remark = document.getElementById('remark').value;
+                console.log('Approved with remark:', remark);
+                closeModal();
+            });
+            rejectBtn.addEventListener('click', function () {
+                const remark = document.getElementById('remark').value;
+                console.log('Rejected with remark:', remark);
                 closeModal();
             });
             // Dropdown logic for country code
