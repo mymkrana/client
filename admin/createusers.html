@@ -67,22 +67,17 @@
                                             Number</label>
                                         <div class="flex flex-row gap-2">
                                             <div class="relative w-[150px]">
-                                                <button type="button" id="countryDropdownBtn" class="h-[42px] w-full flex justify-between items-center border border-[#bfdbfe] rounded-md px-4 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
-                                                    <span id="countryDropdownSelected" class="text-[0.85rem] whitespace-nowrap">+91 (IN)</span>
-                                                    <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-                                                </button>
-                                                <ul id="countryDropdownList" class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto hidden">
-                                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+91 (IN)">+91 (IN)</li>
-                                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+1 (US)">+1 (US)</li>
-                                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+44 (UK)">+44 (UK)</li>
-                                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+234 (NG)">+234 (NG)</li>
-                                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+27 (ZA)">+27 (ZA)</li>
-                                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+49 (DE)">+49 (DE)</li>
-                                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+33 (FR)">+33 (FR)</li>
-                                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+61 (AU)">+61 (AU)</li>
-                                                    <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="+1 (CA)">+1 (CA)</li>
-                                                </ul>
-                                                <input type="hidden" name="countryCode" id="countryCodeInput" value="+91 (IN)">
+                                                <select id="countryCodeInput" name="countryCodeInput" class="h-[42px] w-full border border-gray-300 rounded-md px-4 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-[0.85rem]">
+                                                    <option value="+234 (NG)">+234 (NG)</option>
+                                                    <option value="+91 (IN)">+91 (IN)</option>
+                                                    <option value="+1 (US)">+1 (US)</option>
+                                                    <option value="+44 (UK)">+44 (UK)</option>
+                                                    <option value="+971 (UAE)">+971 (UAE)</option>
+                                                    <option value="+27 (ZA)">+27 (ZA)</option>
+                                                    <option value="+233 (GH)">+233 (GH)</option>
+                                                    <option value="+254 (KE)">+254 (KE)</option>
+                                                    <option value="+92 (PK)">+92 (PK)</option>
+                                                </select>
                                             </div>
                                             <input type="text" placeholder="Enter phone number"
                                                 class="w-full border border-gray-300 rounded-md px-4 py-2 text-gray-900 placeholder:text-[0.95rem] focus:border-gray-900 focus-visible:border-gray-900 text-[0.85rem]" />
@@ -92,27 +87,11 @@
                                         <label class="block font-medium text-gray-900 mb-1 text-[0.85rem]">User
                                             Role</label>
                                         <div class="relative">
-                                            <button type="button" id="roleDropdownBtn"
-                                                class="h-[42px] w-full flex justify-between items-center border border-gray-300 rounded-md px-4 py-2 bg-white text-gray-900 font-semibold focus:outline-none focus:border-gray-900 focus-visible:border-gray-900 transition text-[0.85rem]">
-                                                <span id="roleDropdownSelected" class="text-[0.95rem]">Select
-                                                    role</span>
-                                                <svg class="ml-2 h-5 w-5 text-gray-400"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            </button>
-                                            <ul id="roleDropdownList"
-                                                class="absolute left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto hidden">
-                                                <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer"
-                                                    data-value="Admin">Admin</li>
-                                                <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer"
-                                                    data-value="Affiliate">Affiliate</li>
-                                                <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer"
-                                                    data-value="Manager">Manager</li>
-                                            </ul>
-                                            <input type="hidden" name="userRole" id="userRole" value="">
+                                            <select id="userRole" name="userRole" class="h-[42px] w-full border border-gray-300 rounded-md px-4 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-[0.85rem]">
+                                                <option value="Admin">Admin</option>
+                                                <option value="Affiliate">Affiliate</option>
+                                                <option value="Manager">Manager</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -178,28 +157,6 @@
                         containerOuter: 'choices custom-choices',
                     }
                 });
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const btn = document.getElementById('roleDropdownBtn');
-            const list = document.getElementById('roleDropdownList');
-            const selected = document.getElementById('roleDropdownSelected');
-            const hiddenInput = document.getElementById('userRole');
-            btn.addEventListener('click', function (e) {
-                e.stopPropagation();
-                list.classList.toggle('hidden');
-            });
-            list.querySelectorAll('li').forEach(item => {
-                item.addEventListener('click', function () {
-                    selected.textContent = this.getAttribute('data-value');
-                    hiddenInput.value = this.getAttribute('data-value');
-                    list.classList.add('hidden');
-                });
-            });
-            document.addEventListener('click', function () {
-                list.classList.add('hidden');
             });
         });
     </script>
