@@ -180,35 +180,6 @@
                 }
             }
             roleInput.addEventListener('change', updateFields);
-            // Also update on dropdown click
-            document.querySelectorAll('#roleDropdownList li').forEach(item => {
-                item.addEventListener('click', function () {
-                    setTimeout(updateFields, 10);
-                });
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Country code dropdown logic (button style)
-            const codeBtn = document.getElementById('countryDropdownBtn');
-            const codeList = document.getElementById('countryDropdownList');
-            const codeSelected = document.getElementById('countryDropdownSelected');
-            const codeInput = document.getElementById('countryCodeInput');
-            codeBtn.addEventListener('click', function (e) {
-                e.stopPropagation();
-                codeList.classList.toggle('hidden');
-            });
-            codeList.querySelectorAll('li').forEach(item => {
-                item.addEventListener('click', function () {
-                    codeSelected.textContent = this.getAttribute('data-value');
-                    codeInput.value = this.getAttribute('data-value');
-                    codeList.classList.add('hidden');
-                });
-            });
-            document.addEventListener('click', function () {
-                codeList.classList.add('hidden');
-            });
         });
     </script>
 </body>

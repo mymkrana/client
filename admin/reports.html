@@ -40,24 +40,15 @@
           <form class="space-y-4">
             <div>
               <label class="block font-medium text-gray-900 mb-1 text-[0.85rem]">Date Range Type</label>
-              <div class="relative">
-                <button type="button" id="dateRangeDropdownBtn"
-                  class="h-[42px] w-full flex justify-between items-center border border-gray-300 rounded-md px-4 py-2 bg-white text-gray-900 text-[0.85rem] font-semibold focus:outline-none focus:border-gray-900 focus-visible:border-gray-900 transition">
-                  <span id="dateRangeDropdownSelected">Between</span>
-                  <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <ul id="dateRangeDropdownList"
-                  class="absolute left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 max-h-60 overflow-y-auto hidden">
-                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Between">Between</li>
-                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Today">Today</li>
-                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Last 7 Days">Last 7 Days</li>
-                  <li class="px-4 py-2 hover:bg-blue-50 cursor-pointer" data-value="Last 30 Days">Last 30 Days</li>
-                </ul>
-                <input type="hidden" name="dateRangeType" id="dateRangeType" value="Between">
-              </div>
+              <select id="dateRangeType" name="dateRangeType" class="h-[42px] w-full border border-gray-300 rounded-md px-4 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-[0.85rem]">
+                <option value="today">Today</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="last7">Last 7 Days</option>
+                <option value="last30">Last 30 Days</option>
+                <option value="thisMonth">This Month</option>
+                <option value="lastMonth">Last Month</option>
+                <option value="custom">Custom Range</option>
+              </select>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -133,23 +124,12 @@
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const btn = document.getElementById('dateRangeDropdownBtn');
-      const list = document.getElementById('dateRangeDropdownList');
-      const selected = document.getElementById('dateRangeDropdownSelected');
-      const hiddenInput = document.getElementById('dateRangeType');
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        list.classList.toggle('hidden');
-      });
-      list.querySelectorAll('li').forEach(item => {
-        item.addEventListener('click', function () {
-          selected.textContent = this.getAttribute('data-value');
-          hiddenInput.value = this.getAttribute('data-value');
-          list.classList.add('hidden');
-        });
-      });
-      document.addEventListener('click', function () {
-        list.classList.add('hidden');
+      const select = document.getElementById('dateRangeType');
+      select.addEventListener('change', function () {
+        const selectedValue = this.value;
+        // You can add logic here to update date inputs based on selectedValue
+        // For now, we'll just update the hidden input
+        document.getElementById('dateRangeType').value = selectedValue;
       });
     });
   </script>

@@ -233,56 +233,6 @@
         });
       }
     });
-    // Custom dropdown for bank selection
-    (function () {
-      const btn = document.getElementById('bankDropdownBtn');
-      const list = document.getElementById('bankDropdownList');
-      const selected = document.getElementById('bankDropdownSelected');
-      const hiddenInput = document.getElementById('bankName');
-      if (btn && list && selected && hiddenInput) {
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          list.classList.toggle('hidden');
-        });
-        list.querySelectorAll('li').forEach(function (item) {
-          item.addEventListener('click', function () {
-            selected.textContent = item.textContent;
-            hiddenInput.value = item.getAttribute('data-value');
-            list.classList.add('hidden');
-          });
-        });
-        document.addEventListener('click', function (e) {
-          if (!btn.contains(e.target) && !list.contains(e.target)) {
-            list.classList.add('hidden');
-          }
-        });
-      }
-    })();
-    // Custom dropdown for country code selection
-    (function () {
-      const btn = document.getElementById('countryDropdownBtn');
-      const list = document.getElementById('countryDropdownList');
-      const selected = document.getElementById('countryDropdownSelected');
-      const hiddenInput = document.getElementById('countryCode');
-      if (btn && list && selected && hiddenInput) {
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          list.classList.toggle('hidden');
-        });
-        list.querySelectorAll('li').forEach(function (item) {
-          item.addEventListener('click', function () {
-            selected.textContent = item.textContent;
-            hiddenInput.value = item.getAttribute('data-value');
-            list.classList.add('hidden');
-          });
-        });
-        document.addEventListener('click', function (e) {
-          if (!btn.contains(e.target) && !list.contains(e.target)) {
-            list.classList.add('hidden');
-          }
-        });
-      }
-    })();
     // Registration form validation for enabling Register Now button
     const form = document.querySelector('form');
     const registerBtn = document.getElementById('registerBtn');
